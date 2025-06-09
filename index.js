@@ -18,13 +18,21 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
   const dataPath = path.join(__dirname, 'data/posts.json');
   const posts = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
-  res.render('index.ejs', { posts });
+  res.render('index.ejs', { posts, relatedPosts: posts });
+});
+
+app.get('/posts/:id', (req, res) => {
+  const dataPath = path.join(__dirname, 'data/posts.json');
+  const posts = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+  const post = posts.find(p => p.id === parseInt(req.params.id));
+
+  if (!post) return res.status(404).send('Post not found');
+
+  res.render('index.ejs', { posts, mainPost: post, relatedPosts: posts });
 });
 
 app.post('/submit', (req, res) => {
-    const { name, email, message } = req.body;
-    console.log(`Name: ${name}, Email: ${email}, Message: ${message}`);
-    res.send('Form submitted successfully!');
+    console.log('Form submitted:', req.body);
 }
 );
 app.listen(PORT, () => {

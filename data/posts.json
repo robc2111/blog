@@ -1,14 +1,37 @@
 [
   {
     "id": 1,
-    "title": "My First Blog Post",
+    "title": "Charting My New Path",
     "content": "This is the content of the first post.",
-    "image": "/images/post1.jpg"
+    "image": "/images/post1.jpg",
+    "tags": ["web development", "javascript", "career", "learning"]
   },
   {
     "id": 2,
     "title": "Another Post",
-    "content": "More blog content goes here.",
-    "image": "/images/post2.jpg"
-  }
+    "content": "This is the second post.",
+    "image": "/images/post2.jpg",
+    "tags": ["blogging", "lifestyle"]
+  },
+    {
+        "id": 3,
+        "title": "Learning React",
+        "content": "This post is about learning React.",
+        "image": "/images/post3.jpg",
+        "tags": ["react", "frontend"]
+    },
+    {
+        "id": 4,
+        "title": "Node.js Basics",
+        "content": "An introduction to Node.js.",
+        "image": "/images/post4.jpg",
+        "tags": ["nodejs", "backend"]
+    },
+    {
+        "id": 5,
+        "title": "CSS Tricks",
+        "content": "Some useful CSS tricks.",
+        "image": "/images/post5.jpg",
+        "tags": ["css", "design"]
+    }
 ]

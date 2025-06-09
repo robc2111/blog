@@ -1,1 +1,64 @@
-test
+<head>
+  <title>Home</title>
+  <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+  crossorigin="anonymous"
+/>
+  <link rel="stylesheet" href="/styles/main.css" />
+</head>
+
+<body>
+
+<%- include ("partials/header") %>
+
+<main style="background-image: url('<%= "public/images/lili-popper-lu15z1m_KfM-unsplash.jpg"//post.image %>'); background-size: cover;">
+  
+  <% posts.forEach(post => { %>
+  <section style="background-image: url('<%= post.image %>'); background-size: cover; padding: 2rem;">
+    <h2><%= post.title %></h2>
+    <p><%= post.content %></p>
+  </section>
+<% }) %>
+
+  <section class="container"> 
+  <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+</section>
+
+</main>
+
+<%- include ("partials/footer") %>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ENjdO4Dr2bkBIFxQpeoJxKz0P0pO72U6Kz/fZpPvZgktG2Z9Fd7GfL8AB1p5c9lT"
+  crossorigin="anonymous"
+></script>
+
+</body>

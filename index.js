@@ -19,21 +19,31 @@ app.get('/', (req, res) => {
   const dataPath = path.join(__dirname, 'data/posts.json');
   const posts = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 
-  const mainPost = posts[0]; // First post as the main feature
-  const relatedPosts = posts.slice(1, 4); // change this so it displays post with the same tags
+  const mainPost = posts[0];
+  const relatedPosts = posts.filter(post =>
+    post.id !== mainPost.id &&
+    post.tags?.some(tag => mainPost.tags?.includes(tag))
+  );
 
   res.render('index.ejs', { posts, mainPost, relatedPosts });
 });
 
 app.get('/posts/:id', (req, res) => {
+  const postId = parseInt(req.params.id);
   const dataPath = path.join(__dirname, 'data/posts.json');
   const posts = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
-  const post = posts.find(p => p.id === parseInt(req.params.id));
 
-  if (!post) return res.status(404).send('Post not found');
+  const mainPost = posts.find(post => post.id === postId);
 
-  res.render('index.ejs', { posts, mainPost: post, relatedPosts: posts });
+  const relatedPosts = posts.filter(post =>
+    post.id !== mainPost.id &&
+    post.tags?.some(tag => mainPost.tags?.includes(tag))
+  );
+
+  // You can choose either 'index.ejs' or 'post.ejs' here depending on your layout
+  res.render('index.ejs', { posts, mainPost, relatedPosts });
 });
+
 
 app.get('/about', (req, res) => {
   const dataPath = path.join(__dirname, 'data/posts.json');

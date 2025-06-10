@@ -1,19 +1,38 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <header>
-    <h1>RC</h1>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-    </nav>
-    <div class="dropdown text-center my-3">
-  <button class="btn btn-primary dropdown-toggle" type="button" id="postDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-    Browse Blog Posts
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="postDropdown">
-    <% posts.forEach(post => { %>
-      <li><a class="dropdown-item" href="/posts/<%= post.id %>"><%= post.title %></a></li>
-    <% }) %> //add search functionality
-  </ul>
-</div>
+  <h1>RC</h1>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </nav>
+
+  <div class="dropdown text-center my-3">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="postDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+      Browse Blog Posts
+    </button>
+    <ul class="dropdown-menu p-2" aria-labelledby="postDropdown" style="width: 300px;">
+      <input type="text" class="form-control mb-2" id="postSearch" placeholder="Search posts...">
+      <div id="postList">
+        <% posts.forEach(post => { %>
+          <li><a class="dropdown-item" href="/posts/<%= post.id %>"><%= post.title %></a></li>
+        <% }) %>
+      </div>
+    </ul>
+  </div>
 </header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('postSearch');
+    const dropdownItems = document.querySelectorAll('#postList .dropdown-item');
+
+    searchInput.addEventListener('input', () => {
+      const search = searchInput.value.toLowerCase();
+      dropdownItems.forEach(item => {
+        const title = item.textContent.toLowerCase();
+        item.parentElement.style.display = title.includes(search) ? 'block' : 'none';
+      });
+    });
+  });
+</script>

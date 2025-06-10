@@ -18,7 +18,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
   const dataPath = path.join(__dirname, 'data/posts.json');
   const posts = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
-  res.render('index.ejs', { posts, relatedPosts: posts });
+
+  const mainPost = posts[0]; // First post as the main feature
+  const relatedPosts = posts.slice(1, 4); // change this so it displays post with the same tags
+
+  res.render('index.ejs', { posts, mainPost, relatedPosts });
 });
 
 app.get('/posts/:id', (req, res) => {
@@ -30,6 +34,20 @@ app.get('/posts/:id', (req, res) => {
 
   res.render('index.ejs', { posts, mainPost: post, relatedPosts: posts });
 });
+
+app.get('/about', (req, res) => {
+  const dataPath = path.join(__dirname, 'data/posts.json');
+  const posts = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+  res.render('about.ejs', { posts});
+}
+);
+app.get('/contact', (req, res) => {
+  const dataPath = path.join(__dirname, 'data/posts.json');
+  const posts = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+
+  res.render('contact.ejs', { posts });
+});
+
 
 app.post('/submit', (req, res) => {
     console.log('Form submitted:', req.body);

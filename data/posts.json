@@ -2,36 +2,49 @@
   {
     "id": 1,
     "title": "Charting My New Path",
-    "content": "This is the content of the first post.",
+    "content": "Intro.",
     "image": "/images/post1.jpg",
-    "tags": ["web development", "javascript", "career", "learning"]
+    "tags": ["web development", "javascript", "career", "learning"],
+    "imageBy": "https://unsplash.com/@lili_popper"
   },
   {
     "id": 2,
-    "title": "Another Post",
+    "title": "Why I Quit My Job",
     "content": "This is the second post.",
     "image": "/images/post2.jpg",
-    "tags": ["blogging", "lifestyle"]
+    "tags": ["blogging", "lifestyle"],
+    "imageBy": "https://unsplash.com/@mantashesthavene"
   },
     {
         "id": 3,
-        "title": "Learning React",
-        "content": "This post is about learning React.",
+        "title": "My First Week of Freedom",
+        "content": "Routines, benefits, health, sleep.",
         "image": "/images/post3.jpg",
-        "tags": ["react", "frontend"]
+        "tags": ["react", "frontend"],
+        "imageBy": "https://unsplash.com/@anynieel"
     },
     {
         "id": 4,
-        "title": "Node.js Basics",
+        "title": "Tying Up Loose Ends",
         "content": "An introduction to Node.js.",
         "image": "/images/post4.jpg",
-        "tags": ["nodejs", "backend"]
+        "tags": ["nodejs", "backend"],
+        "imageBy": "https://unsplash.com/@hildedm"
     },
     {
         "id": 5,
-        "title": "CSS Tricks",
+        "title": "Planning for the Future",
         "content": "Some useful CSS tricks.",
         "image": "/images/post5.jpg",
-        "tags": ["css", "design"]
+        "tags": ["css", "design"],
+        "imageBy": "https://unsplash.com/@soymeraki"
+    },
+    {
+        "id": 6,
+        "title": "Brushing Up on Old Skills",
+        "content": "A look at the future of web development.",
+        "image": "/images/post6.jpg",
+        "tags": ["web development", "future"],
+        "imageBy": "https://unsplash.com/@cytonn_photography"
     }
 ]

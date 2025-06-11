@@ -14,7 +14,7 @@ header {
     width: 100%;
     height: 100px;
     margin: 0 auto;
-    border-bottom: 1px solid #333;
+    border-bottom: 2px solid #F8F8FF;
 }
 
 header h1 {
@@ -48,17 +48,20 @@ nav {
     align-items: center;
     width: 100%;
     padding: 20px;
-    background-color: #1A1A1A;
+    background-color: #0A1F44;
+    
 }
 
 .post {
     height: 750px;
-    color: white;
+    color: #F8F8FF;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  background-size: cover;
+    background-position: center;;
 }
 
 body {
-    color: white;
+    color: #F8F8FF;
     background-color: #0A1F44;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -102,4 +105,44 @@ i.fab, i.fas {
 i.fab:hover, i.fas:hover {
   transform: scale(1.2);
   color: #0d6efd;
+}
+
+main p, h2 {
+    padding: 25px;
+    margin: 0 12px 12px 12px;
+    
+}
+
+main p {
+background-color: rgba(10, 31, 68, 0.5); 
+    margin: 12px;
+    border-radius: 5px;
+    
+}
+
+#my-pic {
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 25%;
+    margin: 24px;
+} 
+
+.about {
+    display: block;
+    text-wrap: right;
+}
+
+.contact-title {
+    margin-top: 0;
+    padding-top: 0;
+    align-self: flex-start;
+    text-align: center;
+}
+
+label {
+    color: #0A1F44;
+}
+
+i {
+    color: #F8F8FF;
 }

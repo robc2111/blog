@@ -53,11 +53,12 @@ nav {
 }
 
 .post {
-    height: 750px;
-    color: #F8F8FF;
+  min-height: 750px; /* or any height you prefer */
+  color: #F8F8FF;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   background-size: cover;
-    background-position: center;;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 body {
@@ -121,22 +122,24 @@ background-color: rgba(10, 31, 68, 0.5);
 }
 
 #my-pic {
-    width: 250px;
-    border: 1px solid black;
-    border-radius: 25%;
-    margin: 24px;
-} 
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border: 1px solid black;
+  border-radius: 25%;
+  margin: 24px auto;
+  display: block;
+}
 
 .about {
-    display: block;
-    text-wrap: right;
+  display: block;
+  text-align: left; /* or left/center */
 }
 
 .contact-title {
-    margin-top: 0;
-    padding-top: 0;
-    align-self: flex-start;
-    text-align: center;
+  margin-top: 0;
+  padding-top: 0;
+  text-align: left;
 }
 
 label {
@@ -145,4 +148,21 @@ label {
 
 i {
     color: #F8F8FF;
+}
+
+form button {
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+form button:hover {
+  background-color: #004080;
+}
+
+.card {
+  min-height: 100%;
+}
+
+.card-img-top {
+  object-fit: cover;
+  height: 200px;
 }
